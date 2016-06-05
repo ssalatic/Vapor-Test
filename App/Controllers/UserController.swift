@@ -9,13 +9,15 @@ class UserController: Controller {
 
     func index(_ request: Request) throws -> ResponseRepresentable {
         return JSON([
-            "controller": "UserController.index"
+            "controller": "UserController.index",
+            "action": "Index"
         ])
     }
 
     func store(_ request: Request) throws -> ResponseRepresentable {
         return JSON([
-            "controller": "UserController.store"
+            "controller": "UserController.store",
+            "action": "Store"
         ])
     }
 
