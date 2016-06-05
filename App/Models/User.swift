@@ -2,9 +2,11 @@ import Vapor
 
 final class User {
     var name: String
+    var lastname: String
     
-    init(name: String) {
+    init(name: String, lastname: String) {
         self.name = name
+        self.lastname = lastname
     }
 }
 
@@ -16,7 +18,8 @@ final class User {
 extension User: JSONRepresentable {
     func makeJson() -> JSON {
         return JSON([
-            "name": "\(name)"
+            "name": "\(name)",
+            "lastname": "\(lastname)"
         ])
     }
 }
@@ -27,6 +30,6 @@ extension User: JSONRepresentable {
 */
 extension User: StringInitializable {
     convenience init?(from string: String) throws {
-        self.init(name: string)
+        self.init(name: string, lastname: string)
     }
 }
