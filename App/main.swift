@@ -57,6 +57,10 @@ app.get("json") { request in
     ])
 }
 
+app.get("stefan") { request in
+    return "DOKTOR"
+}
+
 /**
     This route shows how to access request
     data. POST to this route with either JSON
