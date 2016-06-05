@@ -30,6 +30,10 @@ app.get("/") { request in
     return try app.view("welcome.html")
 }
 
+app.get("git") { request in
+    return "Git goood"
+}
+
 /**
     Return JSON requests easy by wrapping
     any JSON data type (String, Int, Dict, etc)
