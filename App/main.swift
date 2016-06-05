@@ -27,8 +27,8 @@ let app = Application()
     --workDir to the application upon execution.
 */
 
-app.grouped("diplomski") { link in
-    app.get("test") { request in
+app.grouped("diplomski") { diplomski in
+    diplomski.get("test") { request in
         return "Radi"
     }
 }
