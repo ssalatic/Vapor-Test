@@ -30,6 +30,13 @@ extension User: JSONRepresentable {
 */
 extension User: StringInitializable {
     convenience init?(from string: String) throws {
-        self.init(name: string, lastname: string)
+
+        if string == "stefan" {
+            self.init(name: string, lastname: string)
+        } else {
+            return nil
+        }
+        
+        
     }
 }
