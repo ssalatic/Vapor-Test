@@ -26,6 +26,14 @@ let app = Application()
     You can override the working directory by passing
     --workDir to the application upon execution.
 */
+
+app.grouped("diplomski") { link in
+    app.get("test") { request in
+        return "Radi"
+    }
+}
+
+
 app.get("/") { request in
     return try app.view("welcome.html")
 }
