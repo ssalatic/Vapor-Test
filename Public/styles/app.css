@@ -2,6 +2,11 @@
 	box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Notera'; /*a name to be used later*/
+    src: url('../fonts/Notera.ttf'); /*URL to font*/
+}
+
 body, html {
 	padding: 0;
 	margin: 0;
@@ -42,6 +47,10 @@ h1#logo {
 	width: 347.5px;
 	height: 84px;
 	margin: 0 auto;
+}
+
+h1 {
+	font-family: 'Notera';
 }
 
 nav.main {
