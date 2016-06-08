@@ -42,6 +42,10 @@ app.get("git") { request in
     return "Git goood"
 }
 
+app.get("/nesto") { result in
+    return JSON(["ime": "pera"])
+}
+
 /**
     Return JSON requests easy by wrapping
     any JSON data type (String, Int, Dict, etc)
