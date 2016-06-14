@@ -59,9 +59,14 @@ app.grouped("kids") { kids in
         let port = request.data["port"]?.string
         
         if let ip = ip, port = port {
-            nodes.append(Node(ip: ip, port: port))
+            let n = Node(ip: ip, port: port)
+            if !nodes.contains(n) {
+                nodes.append(n)
+            } else {
+                printf("CONTAINS THE NODE")
+            }
+            
         }
-        
         return nodes[0]
     }
 }
