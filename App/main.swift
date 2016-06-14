@@ -60,14 +60,33 @@ app.grouped("kids") { kids in
         
         if let ip = ip, port = port {
             let n = Node(ip: ip, port: port)
-            if !nodes.contains(n) {
-                nodes.append(n)
-            } else {
-                print("CONTAINS THE NODE")
-            }
             
+            for node in nodes {
+                if node.ip == n.ip && node.port == n.port {
+                    var result = "["
+                    
+                    for i in 0..<nodes.count {
+                        result += "{\"ip\": \"\(nodes[i].ip)\", \"port\":\"\(nodes[i].port)\"}"
+                        if i != (nodes.count - 1) { result += ", " }
+                    }
+                    result += "]"
+                    
+                    return result
+                }
+            }
+            nodes.append(n)
         }
-        return nodes[0]
+        
+        
+        var result = "["
+        
+        for i in 0..<nodes.count {
+            result += "{\"ip\": \"\(nodes[i].ip)\", \"port\":\"\(nodes[i].port)\"}"
+            if i != (nodes.count - 1) { result += ", " }
+        }
+        result += "]"
+        
+        return result
     }
 }
 
