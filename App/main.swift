@@ -63,7 +63,7 @@ app.grouped("kids") { kids in
             if !nodes.contains(n) {
                 nodes.append(n)
             } else {
-                printf("CONTAINS THE NODE")
+                print("CONTAINS THE NODE")
             }
             
         }
