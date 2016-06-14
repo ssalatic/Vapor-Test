@@ -34,6 +34,40 @@ app.grouped("diplomski") { diplomski in
 }
 
 
+
+struct Node {
+    let ip: String
+    let port: String
+}
+
+extension Node: JSONRepresentable {
+    func makeJson() -> JSON {
+        return JSON([
+            "ip": "\(ip)",
+            "port": "\(port)"
+            ])
+    }
+}
+
+
+var nodes: [Node] = []
+
+
+app.grouped("kids") { kids in
+    kids.get("nodes") { request in
+        let ip = request.data["ip"]?.string
+        let port = request.data["port"]?.string
+        
+        if let ip = ip, port = port {
+            nodes.append(Node(ip: ip, port: port))
+        }
+        
+        return nodes[0]
+    }
+}
+
+
+
 app.get("/") { request in
     return try app.view("welcome.html")
 }
